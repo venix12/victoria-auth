@@ -6,8 +6,8 @@ const { default: Axios } = require('axios');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    req.session.hash = req.query.hash;
+router.get('/auth', (req, res) => {
+    req.session.hash = req.query.k;
 
     const query = querystring.stringify({
         client_id: config.client_id,
