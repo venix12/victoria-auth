@@ -1,0 +1,23 @@
+{
+  "name": "victoria-auth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "connect-mongo": "^3.2.0",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mongoose": "^5.9.18"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
