@@ -1,5 +1,7 @@
 const config = require('./config.json');
 const express = require('express');
+const fs = require('fs');
+const https = require('https');
 const index = require('./index');
 const session = require('express-session');
 
@@ -13,4 +15,11 @@ app.use(session({
 
 app.use('/', index);
 
-app.listen(8080);
+const certificate = {
+    key: fs.readFileSync('/etc/letsencrypt/live/aiess.tk/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/aiess.tk/cert.pem')
+};
+
+const server = https.createServer(certificate, app);
+
+server.listen(8443);
